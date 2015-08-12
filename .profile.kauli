@@ -1,0 +1,15 @@
+################
+# Kauli Setting
+################
+kauli () {
+  # EMR
+  export PATH=/usr/local/bin/elastic-mapreduce-ruby:${PATH}
+  alias elastic-mapreduce="elastic-mapreduce -c /kauli/dmp/etc/elastic-mapreduce.json"
+
+  # AWS
+  export AWS_CONFIG_FILE=/kauli/dmp/etc/aws.cfg
+
+  export KAULI_HOME=/kauli/dmp
+  export PYTHONPATH=${HOME}/venv/kauli/lib/python2.7/site-packages:${PYTHONPATH}:/kauli/dmp/lib:/kauli/common/lib:/kauli/common/python27/lib/python2.7/site-packages
+  source ~/venv/kauli/bin/activate
+}

@@ -23,20 +23,7 @@ alias javac='javac -J-Dfile.encoding=UTF-8'
 # Java MeCab
 export LD_LIBRARY_PATH=/usr/local/lib/java/mecab/:${LD_LIBRARY_PATH}
 
-
-################
 # Kauli Setting
-################
 if [ -e "/kauli" ]; then
-  # EMR
-  export PATH=/usr/local/bin/elastic-mapreduce-ruby:${PATH}
-  alias elastic-mapreduce="elastic-mapreduce -c /kauli/dmp/etc/elastic-mapreduce.json"
-
-  # AWS
-  export AWS_CONFIG_FILE=/kauli/dmp/etc/aws.cfg
-
-  export KAULI_HOME=/kauli/dmp
-  export PYTHONPATH=${HOME}/work/venv/py27/lib/python2.7/site-packages:${PYTHONPATH}:/kauli/dmp/lib:/kauli/common/lib:/kauli/common/python27/lib/python2.7/site-packages
-  source ~/work/venv/py27/bin/activate
-  alias deactivate="deactivate; PYTHONPATH=''"
+  source .profile.kauli
 fi
