@@ -27,7 +27,6 @@ export LD_LIBRARY_PATH=/usr/local/lib/java/mecab/:${LD_LIBRARY_PATH}
 ################
 # Kauli Setting
 ################
-
 if [ -e "/kauli" ]; then
   # EMR
   export PATH=/usr/local/bin/elastic-mapreduce-ruby:${PATH}
@@ -37,6 +36,7 @@ if [ -e "/kauli" ]; then
   export AWS_CONFIG_FILE=/kauli/dmp/etc/aws.cfg
 
   export KAULI_HOME=/kauli/dmp
-  source ~/work/venv/py27/bin/activate
   export PYTHONPATH=${HOME}/work/venv/py27/lib/python2.7/site-packages:${PYTHONPATH}:/kauli/dmp/lib:/kauli/common/lib:/kauli/common/python27/lib/python2.7/site-packages
+  source ~/work/venv/py27/bin/activate
+  alias deactivate="deactivate; PYTHONPATH=''"
 fi
