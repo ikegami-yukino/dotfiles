@@ -25,5 +25,5 @@ export LD_LIBRARY_PATH=/usr/local/lib/java/mecab/:${LD_LIBRARY_PATH}
 
 # Kauli Setting
 if [ -e "/kauli" ]; then
-  source .profile.kauli
+  source ~/.profile.kauli
 fi
