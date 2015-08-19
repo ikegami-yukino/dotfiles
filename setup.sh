@@ -9,7 +9,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   brew install brew-cask
   brew tap caskroom/versions
 
-  brew cask install java1
+  brew cask install java
 
   # Install Ricty font
   brew tap sanemat/font
@@ -37,7 +37,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
 fi
 
 # Make Vim cache dir
-mkdir -p .vim/backup .vim/tmp
+mkdir -p ~/.vim/backup ~/.vim/tmp
 
 # Vim Python syntax checker
 mkdir -p ~/.vim/plugin
