@@ -8,6 +8,8 @@ export HISTCONTROL=ignoreboth
 alias ls='ls -G'
 alias ll='ls -alh -G'
 
+alias gvim='open /Applications/MacVim.app'
+
 # Git
 alias b="git branch"
 alias c="git commit"
