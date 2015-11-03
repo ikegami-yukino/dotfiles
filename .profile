@@ -22,7 +22,8 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 alias java='java -Dfile.encoding=UTF-8'
 alias javac='javac -J-Dfile.encoding=UTF-8'
 
-# Java MeCab
+# MeCab
+export PATH=${PATH}:/usr/local/libexec/mecab
 export LD_LIBRARY_PATH=/usr/local/lib/java/mecab/:${LD_LIBRARY_PATH}
 
 # Kauli Setting
