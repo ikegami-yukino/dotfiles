@@ -57,6 +57,6 @@ wget -O ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathan
 
 # Set git default config
 git config --global user.name "Yukino Ikegami"
-git config --global user.email yukino0131@me.com
+git config --global user.email yknikgm@gmail.com
 
 cp .* ~/
