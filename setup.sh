@@ -59,4 +59,10 @@ wget -O ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathan
 git config --global user.name "Yukino Ikegami"
 git config --global user.email yknikgm@gmail.com
 
+# Jupyter notebook settings
+if [ ! -f ${HOME}/.ipython/profile_default ]; then
+  mkdir -p ${HOME}/.ipython/profile_default
+fi
+cp .ipython/profile_default/* ${HOME}/.ipython/profile_default/
+
 cp .* ~/
