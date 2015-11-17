@@ -55,10 +55,6 @@ wget -O ~/.vim/autoload/color_helper.vim https://raw.githubusercontent.com/natha
 wget -O ~/.vim/autoload/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/indent_guides.vim
 wget -O ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/plugin/indent_guides.vim
 
-# Set git default config
-git config --global user.name "Yukino Ikegami"
-git config --global user.email yknikgm@gmail.com
-
 # Jupyter notebook settings
 if [ ! -f ${HOME}/.ipython/profile_default ]; then
   mkdir -p ${HOME}/.ipython/profile_default

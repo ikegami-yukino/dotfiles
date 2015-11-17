@@ -1,0 +1,20 @@
+[color]
+  ui = auto
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  logg = log --graph
+  logm = log --merges --oneline
+  logs = log --stat
+[user]
+  name = Yukino Ikegami
+  email = yknikgm@gmail.com
+[branch "master"]
+  merge = refs/heads/master
+  remote = origin
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
