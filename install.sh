@@ -61,4 +61,8 @@ if [ ! -f ${HOME}/.ipython/profile_default ]; then
 fi
 cp .ipython/profile_default/* ${HOME}/.ipython/profile_default/
 
+# matplotlib setting
+mkdir ${HOME}/.matplotlib
+cp .matplotlib/matplotlibrc ${HOME}/.matplotlib/matplotlibrc
+
 cp .* ~/
