@@ -2,15 +2,18 @@ set number
 set nocompatible
 set ambiwidth=double
 set encoding=utf8
-set fileencoding=utf8
+set fileencodings=utf-8,iso-2022-jp,cp932,eucjp-ms
 set directory=~/.vim/tmp
 set backupdir=~/.vim/backup
+set undodir=~/.vim/undo
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
 set clipboard=unnamedplus
+" beep
+set visualbell
 colorscheme peachpuff
 
 "" indent guide
@@ -32,3 +35,7 @@ autocmd FileType python map <buffer> <F10> :call Autopep8() <CR>
 autocmd FileType python map <buffer> <F11> :call Flake8() <CR>
 au BufNewFile,BufRead *.hql set filetype=hive expandtab
 au BufNewFile,BufRead *.q set filetype=hive expandtab
+
+augroup Templates
+  autocmd BufNewFile *.py 0r ~/.vim/template/python.py
+augroup END
