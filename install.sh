@@ -26,7 +26,7 @@ fi
 
 echo 'source .profile' > ~/.bashrc
 
-sudo make_dir /work
+sudo mkdir /work
 sudo chmod 777 /work
 
 ###############
