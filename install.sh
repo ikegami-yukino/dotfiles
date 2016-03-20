@@ -1,43 +1,72 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -eu
+
+make_link() {
+  items=${@}
+  for x in ${items[@]}
+  do
+    if [ ! -e ~/${x} ]; then
+      echo "Create ${x}"
+      ln -s ~/dotfiles/${x} ~/
+    fi
+  done
+}
 
 homebrew() {
   items=${@}
   for x in ${items[@]}
   do
-    echo "install ${x}"
-    brew install ${x},
+    if type ${x} 1> /dev/null 2> /dev/null ; then
+      if brew upgrade ${x} ; then
+        :
+      fi
+    else
+      echo "install ${x}"
+      brew install ${x}
+    fi
   done
 }
+
 homebrewcask() {
   items=${@}
   for x in ${items[@]}
   do
-    echo "install ${x}"
-    brew cask install ${x},
+    if type ${x} 1> /dev/null 2> /dev/null ; then
+      :
+    else
+      echo "install ${x}"
+      brew cask install ${x}
+    fi
   done
 }
+
 make_dir() {
-if [ ! -d ~/$1 ]; then
-    echo "mkdir: $1"
-    mkdir -p $1
+if [ ! -d ~/${1} ]; then
+    echo "mkdir: ${1}"
+    mkdir -p ${1}
 fi
 }
 
 echo 'source .profile' > ~/.bashrc
 
-sudo mkdir /work
-sudo chmod 777 /work
+if [ ! -d /work ]; then
+    echo "mkdir: /work"
+    sudo mkdir /work
+    sudo chmod 777 /work
+fi
 
 ###############
 # Git
 ###############
-if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+if type apt-get 1> /dev/null 2> /dev/null ; then
+  apt-get update
   sudo apt-get install -y git
 fi
-git clone https://github.com/ikegami-yukino/dotfiles.git ~/dotfiles
+if [ ! -d ~/dotfiles ]; then
+  git clone https://github.com/ikegami-yukino/dotfiles.git ~/dotfiles
+fi
 
-ln -s ~/dotfiles/.* ~/
+make_link {.bashrc,.gitconfig,.gitignore_global,.gvimrc,.ipython,.matplotlib,.profile,.ssh,.vim,.vimrc}
 
 git config --global user.name "Yukino Ikegami"
 git config --global user.email yknikgm@gmail.com
@@ -47,24 +76,27 @@ git config --global core.excludesfile $HOME/.gitignore_global
 # OSX
 ###############
 if [ "$(uname)" == 'Darwin' ]; then
-  echo 'Install xcode'
-  xcode-select --install
+  if xcode-select --install 1> /dev/null ; then
+    :
+  fi
 
-  echo 'Install Homebrew'
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  if type brew 1> /dev/null 2> /dev/null ; then
+    :
+  else
+    echo 'Install Homebrew'
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
   homebrew tig nkf wget coreutils gnu-sed python3
 
   echo 'Install Java'
-  brew tap phinze/homebrew-cask
-  brew install brew-cask
   brew tap caskroom/versions
-
   homebrewcask java
 
   echo 'Install Ricty font'
   brew tap sanemat/font
   brew install Caskroom/cask/xquartz ricty
-  ln -s /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+  ln -sf /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
   fc-cache -vf
 
   echo 'Install GUI apps'
@@ -97,11 +129,10 @@ if [ "$(uname)" == 'Darwin' ]; then
   defaults write com.apple.finder QLEnableTextSelection -bool true
   # 撮影した画像から影のエフェクトを無くす
   defaults write com.apple.screencapture disable-shadow -bool true
-  # 撮影した画像のファイル名を好きな名称に変更する
+  # 撮影した画像のファイル名を変更する
   defaults write com.apple.screencapture name cap
 
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-  apt-get update
+elif type apt-get 1> /dev/null 2> /dev/null ; then
 
   # Install building tool
   apt-get install -y build-essential python3.5-dev python-pip virtualenv
