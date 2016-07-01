@@ -68,11 +68,6 @@ fi
 
 make_link {.bashrc,.gitconfig,.gitignore_global,.gvimrc,.ipython,.matplotlib,.profile,.ssh,.vim,.vimrc}
 
-
-curl https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight
-chmod +x diff-highlight
-mv diff-highlight /usr/local/bin/diff-highlight
-
 git config --global user.name "Yukino Ikegami"
 git config --global user.email yknikgm@gmail.com
 git config --global core.excludesfile $HOME/.gitignore_global
