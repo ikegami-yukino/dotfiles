@@ -26,7 +26,6 @@ alias gc="git diff --cached"
 alias gb="git branch --no-merge"
 alias gbr="git branch -r --no-merge"
 alias gitauthorreset="git commit --amend --reset-author"
-alias gitvgmail="git config user.email yukino_ikegami@voyagegroup.com"
 
 # Java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
