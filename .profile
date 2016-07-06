@@ -36,7 +36,7 @@ alias javac='javac -J-Dfile.encoding=UTF-8'
 # MeCab
 export PATH=${PATH}:/usr/local/libexec/mecab
 export LD_LIBRARY_PATH=/usr/local/lib/java/mecab/:${LD_LIBRARY_PATH}
-
+alias neologd='mecab -d mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd'
 
 ##################
 # Private settings
