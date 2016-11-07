@@ -190,4 +190,5 @@ wget -O ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathan
 # Jupyter magic
 ###############
 sudo pip install autopep8
-wget -O ~/.ipython/extensions/autopep8magic.py https://raw.githubusercontent.com/ikegami-yukino/misc/master/misc/autopep8magic/autopep8magic.py
+jupyter nbextension install https://github.com/kenkoooo/jupyter-autopep8/archive/master.zip --user
+jupyter nbextension enable jupyter-autopep8-master/jupyter-autopep8
