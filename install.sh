@@ -151,8 +151,8 @@ elif type apt-get 1> /dev/null 2> /dev/null ; then
   sudo apt-get install oracle-java8-set-default
 
   # Install Elasticsearch
-  https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.7.5.deb
-  dpkg -i elasticsearch-1.7.5.deb
+  https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.0.0.deb
+  dpkg -i elasticsearch-5.0.0.deb
   service elasticsearch start
 
   # Set Japan timezone
