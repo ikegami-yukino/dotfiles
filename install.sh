@@ -102,7 +102,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   echo 'Install GUI apps'
   homebrewcask skype macvim-kaoriya totalspaces flux
   homebrewcask google-chrome firefox chromium
-  homebrewcask dropbox mendeley-desktop iterm2 appcleaner
+  homebrewcask dropbox mendeley-desktop iterm2 appcleaner ag
 
   # for development computer
   homebrewcask eclipse-java virtualbox vagrant no-ip-duc
