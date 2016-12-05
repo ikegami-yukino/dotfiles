@@ -87,7 +87,7 @@ if [ "$(uname)" == 'Darwin' ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  homebrew tig nkf wget coreutils gnu-sed python3
+  homebrew tig nkf wget coreutils gnu-sed python3 ag
 
   echo 'Install Java'
   brew tap caskroom/versions
@@ -102,7 +102,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   echo 'Install GUI apps'
   homebrewcask skype macvim-kaoriya totalspaces flux
   homebrewcask google-chrome firefox chromium
-  homebrewcask dropbox mendeley-desktop iterm2 appcleaner ag
+  homebrewcask dropbox mendeley-desktop iterm2 appcleaner
 
   # for development computer
   homebrewcask eclipse-java virtualbox vagrant no-ip-duc
