@@ -36,6 +36,11 @@ alias javac='javac -J-Dfile.encoding=UTF-8'
 export PATH=${PATH}:/usr/local/libexec/mecab
 export LD_LIBRARY_PATH=/usr/local/lib/java/mecab/:${LD_LIBRARY_PATH}
 alias neologd='mecab -d mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd'
+neologd_update (){
+  git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git /tmp/mecab-ipadic-neologd
+  bash /tmp/mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd -n -y
+  rm -rf /tmp/mecab-ipadic-neologd
+}
 
 ##################
 # Private settings
