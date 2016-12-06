@@ -99,6 +99,9 @@ if [ "$(uname)" == 'Darwin' ]; then
   ln -sf /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
   fc-cache -vf
 
+  echo 'Install QuickLook plugins'
+  homebrewcask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql
+
   echo 'Install GUI apps'
   homebrewcask skype macvim-kaoriya totalspaces flux
   homebrewcask google-chrome firefox chromium
