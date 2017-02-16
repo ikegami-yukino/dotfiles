@@ -1,4 +1,5 @@
 export LANG=ja_JP.UTF-8
+export LC_ALL=C
 export LC_ALL=ja_JP.UTF-8
 export PS1="\h:\W \u\\$ "
 
@@ -11,7 +12,7 @@ alias l='ls -lah -G'
 alias ls='ls -G'
 alias ll='ls -alh -G'
 alias keys="ssh-add -l"
-alias gvim='open ~/Applications/MacVim.app'
+alias gvim='open /Applications/MacVim.app'
 
 # Python
 export PYTHONDONTWRITEBYTECODE=1

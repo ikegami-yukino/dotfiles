@@ -18,3 +18,5 @@
   log = diff-highlight | less
   show = diff-highlight | less
   diff = diff-highlight | less
+[core]
+	excludesfile = /Users/yukino/.gitignore_global
