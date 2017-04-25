@@ -66,7 +66,7 @@ if [ ! -d ~/dotfiles ]; then
   git clone https://github.com/ikegami-yukino/dotfiles.git ~/dotfiles
 fi
 
-make_link {.bashrc,.gitconfig,.gitignore_global,.gvimrc,.ipython,.matplotlib,.profile,.ssh,.vim,.vimrc}
+make_link {.bashrc,.gitconfig,.gitignore_global,.gvimrc,.ipython,.jupyter,.matplotlib,.profile,.ssh,.vim,.vimrc}
 
 git config --global user.name "Yukino Ikegami"
 git config --global user.email yknikgm@gmail.com
