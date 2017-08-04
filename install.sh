@@ -103,15 +103,9 @@ if [ "$(uname)" == 'Darwin' ]; then
   homebrewcask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql
 
   echo 'Install GUI apps'
-  homebrewcask skype macvim totalspaces flux
-  homebrewcask google-chrome firefox chromium
-  homebrewcask dropbox mendeley-desktop iterm2 appcleaner
-
-  # for development computer
-  homebrewcask eclipse-java virtualbox vagrant no-ip-duc
-
-  # for media server
-  homebrewcask lyrics-master bettertouchtool vlc
+  homebrewcask slack macvim totalspaces flux
+  homebrewcask google-chrome
+  homebrewcask dropbox iterm2 appcleaner
 
   # Download ChocolatePapaya color for Vim
   make_dir ~/.vim/colors
