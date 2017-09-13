@@ -184,6 +184,7 @@ wget -O ~/.vim/autoload/indent_guides.vim https://raw.githubusercontent.com/nath
 wget -O ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/plugin/indent_guides.vim
 
 # vim-yapf
+sudo pip install yapf
 make_dir ~/.vim/ftplugin
 wget -O ~/.vim/ftplugin/python_yapf.vim https://raw.githubusercontent.com/mindriot101/vim-yapf/master/ftplugin/python_yapf.vim
 
