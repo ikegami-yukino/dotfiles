@@ -103,9 +103,15 @@ if [ "$(uname)" == 'Darwin' ]; then
   homebrewcask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql
 
   echo 'Install GUI apps'
-  homebrewcask slack macvim totalspaces flux
-  homebrewcask google-chrome
-  homebrewcask dropbox iterm2 appcleaner
+  homebrewcask skype macvim totalspaces flux
+  homebrewcask google-chrome firefox chromium
+  homebrewcask dropbox mendeley-desktop iterm2 appcleaner
+
+  # for development computer
+  homebrewcask eclipse-java virtualbox vagrant no-ip-duc
+
+  # for media server
+  homebrewcask lyrics-master bettertouchtool vlc
 
   # Download ChocolatePapaya color for Vim
   make_dir ~/.vim/colors
@@ -182,10 +188,6 @@ mkdir -p ~/.vim/{ftdetect,indent,syntax} && for d in ftdetect indent syntax ; do
 wget -O ~/.vim/autoload/color_helper.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/color_helper.vim
 wget -O ~/.vim/autoload/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/indent_guides.vim
 wget -O ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/plugin/indent_guides.vim
-
-# vim-yapf
-make_dir ~/.vim/ftplugin
-wget -O ~/.vim/ftplugin/python_yapf.vim https://raw.githubusercontent.com/mindriot101/vim-yapf/master/ftplugin/python_yapf.vim
 
 ###############
 # Jupyter magic
