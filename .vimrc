@@ -28,9 +28,12 @@ set listchars=tab:^\ ,trail:~
 
 autocmd Filetype python set tabstop=4
 autocmd Filetype python set shiftwidth=4
+autocmd Filetype javascript set tabstop=4
+autocmd Filetype javascript set shiftwidth=4
 
 syntax on
 filetype plugin indent on
+autocmd FileType python map <buffer> <F9> :call Yapf() <CR>
 autocmd FileType python map <buffer> <F10> :call Autopep8() <CR>
 autocmd FileType python map <buffer> <F11> :call Flake8() <CR>
 au BufNewFile,BufRead *.hql set filetype=hive expandtab
