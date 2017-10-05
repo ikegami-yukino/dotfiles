@@ -7,9 +7,9 @@
 ## Windows
 
 ```
-wget https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/.vimrc  -OutFile .vimrc
-md .vim/tmp
-md .vim/backup
-md .vim/undo
-curl http://vim-jp.org/redirects/koron/vim-kaoriya/latest/win64/
+bitsadmin.exe /TRANSFER htmlget https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/.vimrc  C:\Users\etern\.vimrc
+md .vim
+md .vim\tmp
+md .vim\backup
+md .vim\undo
 ```
