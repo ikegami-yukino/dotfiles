@@ -47,8 +47,6 @@ if [ ! -d ~/${1} ]; then
 fi
 }
 
-echo 'source .profile' > ~/.bashrc
-
 if [ ! -d /work ]; then
     echo "mkdir: /work"
     sudo mkdir /work
@@ -76,6 +74,8 @@ git config --global core.excludesfile $HOME/.gitignore_global
 # OSX
 ###############
 if [ "$(uname)" == 'Darwin' ]; then
+  echo 'source .profile' > ~/.bashrc
+
   if xcode-select --install 1> /dev/null ; then
     :
   fi
