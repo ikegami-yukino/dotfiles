@@ -132,7 +132,7 @@ if [ "$(uname)" == 'Darwin' ]; then
 elif type apt 1> /dev/null 2> /dev/null ; then
 
   # Install building tool
-  sudo apt install -y build-essential python3.5-dev python-pip virtualenv
+  sudo apt install -y build-essential python3.5-dev python-pip virtualenv python3-pip
 
   # Install Developper tool
   sudo apt install vim-gnome byobu
