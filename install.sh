@@ -107,10 +107,6 @@ if [ "$(uname)" == 'Darwin' ]; then
   homebrewcask google-chrome
   homebrewcask dropbox iterm2 appcleaner
 
-  # Download ChocolatePapaya color for Vim
-  make_dir ~/.vim/colors
-  wget -O ~/.vim/colors/ChocolatePapaya.vim https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim
-
   ###############
   # OSX settings
   ###############
@@ -172,6 +168,10 @@ fi
 make_dir ~/.vim/backup
 make_dir ~/.vim/tmp
 make_dir ~/.vim/undo
+
+# Download ChocolatePapaya color for Vim
+make_dir ~/.vim/colors
+wget -O ~/.vim/colors/ChocolatePapaya.vim https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim
 
 # Vim Python syntax checker
 make_dir ~/.vim/plugin
