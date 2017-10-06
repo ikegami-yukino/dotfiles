@@ -129,34 +129,37 @@ if [ "$(uname)" == 'Darwin' ]; then
   # 撮影した画像のファイル名を変更する
   defaults write com.apple.screencapture name cap
 
-elif type apt-get 1> /dev/null 2> /dev/null ; then
+elif type apt 1> /dev/null 2> /dev/null ; then
 
   # Install building tool
-  apt-get install -y build-essential python3.5-dev python-pip virtualenv
+  sudo apt install -y build-essential python3.5-dev python-pip virtualenv
+
+  # Install Developper tool
+  sudo apt install vim-gnome byobu
 
   # Install scipy dependencies
-  apt-get install -y gfortran liblapack-dev libblas-dev
+  sudo apt install -y gfortran liblapack-dev libblas-dev
 
   # Install matplotlib dependencies
-  apt-get install -y libtiff5-dev libjpeg8-dev zlib1g-dev
-  apt-get install -y libfreetype6-dev liblcms2-dev libwebp-dev
+  sudo apt install -y libtiff5-dev libjpeg8-dev zlib1g-dev
+  sudo apt install -y libfreetype6-dev liblcms2-dev libwebp-dev
 
   # Install Java8
   sudo add-apt-repository ppa:webupd8team/java
-  sudo apt-get update
-  sudo apt-get install -y oracle-java8-installer
-  sudo apt-get install oracle-java8-set-default
+  sudo apt update
+  sudo apt install -y oracle-java8-installer
+  sudo apt install oracle-java8-set-default
 
   # Install Elasticsearch
   wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.2.deb
-  dpkg -i elasticsearch-5.6.2.deb
-  service elasticsearch start
+  sudo dpkg -i elasticsearch-5.6.2.deb
+  sudo service elasticsearch start
 
   # Set Japan timezone
-  ln -sf /usr/share/zoneinfo/Japan /etc/localtime
+  sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
 
   # Install substitute fonts to use in WordMap job
-  apt-get install -y fonts-migmix
+  sudo apt install -y fonts-migmix
 fi
 
 ###############
