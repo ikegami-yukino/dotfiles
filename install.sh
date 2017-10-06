@@ -160,6 +160,9 @@ elif type apt 1> /dev/null 2> /dev/null ; then
 
   # Install substitute fonts to use in WordMap job
   sudo apt install -y fonts-migmix
+  
+  # Rename directories
+  LANG=C xdg-user-dirs-gtk-update
 fi
 
 ###############
