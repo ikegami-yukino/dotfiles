@@ -138,7 +138,7 @@ elif type apt-get 1> /dev/null 2> /dev/null ; then
   apt-get install -y gfortran liblapack-dev libblas-dev
 
   # Install matplotlib dependencies
-  apt-get install -y libtiff4-dev libjpeg8-dev zlib1g-dev
+  apt-get install -y libtiff5-dev libjpeg8-dev zlib1g-dev
   apt-get install -y libfreetype6-dev liblcms2-dev libwebp-dev
 
   # Install Java8
