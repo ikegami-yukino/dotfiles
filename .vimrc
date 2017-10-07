@@ -45,4 +45,4 @@ augroup END
 
 if has('win32')
   source $VIMRUNTIME/mswin.vim
-endi
+endif
