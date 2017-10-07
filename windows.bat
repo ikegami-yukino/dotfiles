@@ -29,6 +29,3 @@ echo Vim indent guide
 bitsadmin.exe /TRANSFER htmlget https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/color_helper.vim C:\Users\%USER%\.vim\autoload\color_helper.vim 
 bitsadmin.exe /TRANSFER htmlget https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/indent_guides.vim C:\Users\%USER%\.vim\autoload\indent_guides.vim 
 bitsadmin.exe /TRANSFER htmlget https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/plugin/indent_guides.vim C:\Users\%USER%\.vim\plugin\indent_guides.vim 
-
-echo Install Chocolatey
-@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
