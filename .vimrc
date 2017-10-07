@@ -42,3 +42,7 @@ au BufNewFile,BufRead *.q set filetype=hive expandtab
 augroup Templates
   autocmd BufNewFile *.py 0r ~/.vim/template/python.py
 augroup END
+
+if has('win32')
+  source $VIMRUNTIME/mswin.vim
+endi
