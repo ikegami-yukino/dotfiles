@@ -112,6 +112,8 @@ if [ "$(uname)" == 'Darwin' ]; then
   ###############
   # ネットワークボリュームに.DS_Storeを作らない
   defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+  # USBドライブに.DS_Shareを作らない
+  defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
   # 隠しファイルの表示
   defaults write com.apple.finder AppleShowAllFiles -bool true
   # ライブラリフォルダの表示
