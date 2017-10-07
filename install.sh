@@ -159,6 +159,18 @@ elif type apt 1> /dev/null 2> /dev/null ; then
   
   # Rename directories
   LANG=C xdg-user-dirs-gtk-update
+  
+  # Diasble guest session
+  sudo sh -c 'printf "[SeatDefaults]\nallow-guest=false\n" >/usr/share/lightdm/lightdm.conf.d/50-no-guest.conf'
+
+  # Prevents Windows's clock from shifting
+  sudo timedatectl set-local-rtc true
+  
+  # Change setting clock server
+  sudo sed -i 's/#NTP=/NTP=ntp.nict.jp/g' /etc/systemd/timesyncd.conf
+  
+  # Change nautilus's address bar to text style
+  gsettings set org.gnome.nautilus.preferences always-use-location-entry true
 fi
 
 ###############
