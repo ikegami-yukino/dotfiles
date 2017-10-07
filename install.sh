@@ -173,6 +173,9 @@ elif type apt 1> /dev/null 2> /dev/null ; then
   
   # Change nautilus's address bar to text style
   gsettings set org.gnome.nautilus.preferences always-use-location-entry true
+  
+  # mount exFAT
+  sudo apt-get install exfat-fuse exfat-utils
 fi
 
 ###############
