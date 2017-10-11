@@ -14,4 +14,4 @@ homebrewcask() {
   done
 }
 
-homebrewcask lyrics-master bettertouchtool vlc no-ip-duc
+homebrewcask lyrics-master bettertouchtool vlc no-ip-duc smcfancontrol
