@@ -15,4 +15,4 @@
   merge = refs/heads/master
   remote = origin
 [core]
-	excludesfile = /Users/yukino/.gitignore_global
+  excludesfile = /Users/yukino/.gitignore_global
