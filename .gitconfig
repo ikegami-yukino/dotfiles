@@ -14,5 +14,11 @@
 [branch "master"]
   merge = refs/heads/master
   remote = origin
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
 [core]
   excludesfile = /Users/yukino/.gitignore_global
+[diff]
+	compactionHeuristic = true
