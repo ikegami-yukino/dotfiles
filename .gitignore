@@ -2,3 +2,12 @@
 *~
 *.swp
 *.swo
+
+history.sqlite
+
+*id_rsa
+*id_rsa.pub
+known_hosts
+
+.vim/undo/*
+.vim/tmp/.swn
