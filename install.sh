@@ -31,9 +31,7 @@ homebrewcask() {
   items=${@}
   for x in ${items[@]}
   do
-    if type ${x} 1> /dev/null 2> /dev/null ; then
-      :
-    else
+    if [ ! -e /Applications/${x} ] ; then
       echo "install ${x}"
       brew cask install ${x}
     fi
@@ -88,7 +86,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   fi
 
   homebrew git tig nkf wget coreutils gnu-sed python3 ag
-  ln -s /usr/local/Cellar/git/*/share/git-core/contrib/diff-highligt /usr/local/bin
+  ln -sf /usr/local/Cellar/git/*/share/git-core/contrib/diff-highlight /usr/local/bin
 
   echo 'Install Java'
   brew tap caskroom/versions
@@ -101,10 +99,10 @@ if [ "$(uname)" == 'Darwin' ]; then
   fc-cache -vf
 
   echo 'Install QuickLook plugins'
-  homebrewcask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql
+  homebrewcask qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql
 
   echo 'Install GUI apps'
-  homebrewcask slack macvim totalspaces flux
+  homebrewcask macvim totalspaces flux
   homebrewcask google-chrome
   homebrewcask dropbox iterm2 appcleaner
 
