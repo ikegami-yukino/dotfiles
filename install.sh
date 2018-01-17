@@ -213,6 +213,10 @@ sudo pip install yapf
 make_dir ~/.vim/ftplugin
 wget -O ~/.vim/ftplugin/python_yapf.vim https://raw.githubusercontent.com/mindriot101/vim-yapf/master/ftplugin/python_yapf.vim
 
+# vim-isort
+sudo pip install isort
+wget -O ~/.vim/ftplugin/python_vimisort.vim https://raw.githubusercontent.com/fisadev/vim-isort/master/ftplugin/python_vimisort.vim
+
 ###############
 # Jupyter magic
 ###############
