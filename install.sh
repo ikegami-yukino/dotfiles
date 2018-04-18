@@ -92,12 +92,6 @@ if [ "$(uname)" == 'Darwin' ]; then
   brew tap caskroom/versions
   homebrewcask java
 
-  echo 'Install Ricty font'
-  brew tap sanemat/font
-  brew install Caskroom/cask/xquartz ricty
-  ln -sf /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
-  fc-cache -vf
-
   echo 'Install QuickLook plugins'
   homebrewcask qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql
 

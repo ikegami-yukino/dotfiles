@@ -1,2 +1,2 @@
 colorscheme ChocolatePapaya
-set guifont=Ricty:h22
+set guifont=Cica:h22
