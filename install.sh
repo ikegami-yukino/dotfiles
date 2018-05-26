@@ -55,7 +55,7 @@ fi
 # Git
 ###############
 if type apt-get 1> /dev/null 2> /dev/null ; then
-  apt-get update
+  sudo apt-get update
   sudo apt-get install -y git
 fi
 if [ ! -d ~/dotfiles ]; then
