@@ -15,7 +15,9 @@ alias l='ls -lah -G'
 alias ls='ls -G'
 alias ll='ls -alh -G'
 alias keys="ssh-add -l"
-alias gvim='open /Applications/MacVim.app'
+if [ "$(uname)" == 'Darwin' ]; then
+  alias gvim='open /Applications/MacVim.app'
+fi
 
 # Python
 export PYTHONDONTWRITEBYTECODE=1
@@ -41,7 +43,7 @@ alias javac='javac -J-Dfile.encoding=UTF-8'
 # MeCab
 export PATH=${PATH}:/usr/local/libexec/mecab
 export LD_LIBRARY_PATH=/usr/local/lib/java/mecab/:${LD_LIBRARY_PATH}
-alias neologd='mecab -d mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd'
+alias neologd='mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd'
 neologd_update (){
   git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git /tmp/mecab-ipadic-neologd
   bash /tmp/mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd -n -y
