@@ -12,9 +12,9 @@ set shiftwidth=2
 set autoindent
 set smartindent
 set clipboard=unnamedplus
-" beep
-set visualbell
+
 colorscheme peachpuff
+
 " 対応括弧に'<'と'>'のペアを追加
 set matchpairs& matchpairs+=<:>
 " [ と打ったら [] って入力されてしかも括弧の中にいる(以下同様)
