@@ -46,6 +46,7 @@ autocmd FileType python map <buffer> <F10> :call Autopep8() <CR>
 autocmd FileType python map <buffer> <F11> :call Flake8() <CR>
 au BufNewFile,BufRead *.hql set filetype=hive expandtab
 au BufNewFile,BufRead *.q set filetype=hive expandtab
+au BufNewFile,BufRead *.gyp set filetype=python expandtab
 
 augroup Templates
   autocmd BufNewFile *.py 0r ~/.vim/template/python.py
