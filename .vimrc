@@ -53,5 +53,6 @@ augroup Templates
 augroup END
 
 if has('win32')
+  set rop=type:directx,renmode:5
   source $VIMRUNTIME/mswin.vim
 endif
