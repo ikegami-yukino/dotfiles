@@ -126,7 +126,7 @@ elif type apt 1> /dev/null 2> /dev/null ; then
   sudo apt install -y build-essential python3.6-dev python-pip virtualenv python3-pip
 
   # Install Developper tool
-  sudo apt install vim-gnome byobu
+  sudo apt install vim-gnome byobu tig
 
   # Install scipy dependencies
   sudo apt install -y gfortran liblapack-dev libblas-dev
@@ -141,16 +141,8 @@ elif type apt 1> /dev/null 2> /dev/null ; then
   sudo apt install -y oracle-java8-installer
   sudo apt install oracle-java8-set-default
 
-  # Install Elasticsearch
-  wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.4.deb
-  sudo dpkg -i elasticsearch-6.2.4.deb
-  sudo service elasticsearch start
-
   # Set Japan timezone
   sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
-
-  # Install substitute fonts to use in WordMap job
-  sudo apt install -y fonts-migmix
 
   # Rename directories
   LANG=C xdg-user-dirs-gtk-update
