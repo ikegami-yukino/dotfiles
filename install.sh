@@ -179,6 +179,7 @@ make_dir ~/.vim/colors
 wget -O ~/.vim/colors/ChocolatePapaya.vim https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim
 
 # Vim Python syntax checker
+sudo pip install flake8 autopep8
 make_dir ~/.vim/plugin
 wget -O ~/.vim/plugin/python_flake8.vim https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim
 wget -O ~/.vim/plugin/python_autopep8.vim https://raw.githubusercontent.com/tell-k/vim-autopep8/master/ftplugin/python_autopep8.vim
@@ -206,6 +207,9 @@ wget -O ~/.vim/ftplugin/python_vimisort.vim https://raw.githubusercontent.com/fi
 ###############
 # Jupyter magic
 ###############
-sudo pip install jupyter autopep8
+sudo pip install jupyter
 jupyter nbextension install https://github.com/kenkoooo/jupyter-autopep8/archive/master.zip --user
 jupyter nbextension enable jupyter-autopep8-master/jupyter-autopep8
+
+jupyter nbextension install https://github.com/benjaminabel/jupyter-isort/archive/master.zip --user
+jupyter nbextension enable jupyter-isort-master/jupyter-isort
