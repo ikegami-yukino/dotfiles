@@ -1,0 +1,6 @@
+{
+    "floatx": "float16",
+    "epsilon": 1e-07,
+    "backend": "tensorflow",
+    "image_dim_ordering": "tf"
+}
