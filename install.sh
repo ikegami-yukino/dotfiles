@@ -126,7 +126,7 @@ elif type apt 1> /dev/null 2> /dev/null ; then
   sudo apt install -y build-essential python3.6-dev python-pip virtualenv python3-pip
 
   # Install Developper tool
-  sudo apt install vim-gnome byobu tig
+  sudo apt install vim-gnome byobu tig openssh-server
 
   # Install scipy dependencies
   sudo apt install -y gfortran liblapack-dev libblas-dev
