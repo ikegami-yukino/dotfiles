@@ -135,11 +135,8 @@ elif type apt 1> /dev/null 2> /dev/null ; then
   sudo apt install -y libtiff5-dev libjpeg8-dev zlib1g-dev
   sudo apt install -y libfreetype6-dev liblcms2-dev libwebp-dev
 
-  # Install Java8
-  sudo add-apt-repository ppa:webupd8team/java
-  sudo apt update
-  sudo apt install -y oracle-java8-installer
-  sudo apt install oracle-java8-set-default
+  # Install Java10
+  sudo apt install openjdk-11-jre-headless
 
   # Set Japan timezone
   sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
