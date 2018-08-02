@@ -184,6 +184,11 @@ wget -O ~/.vim/plugin/python_autopep8.vim https://raw.githubusercontent.com/tell
 make_dir ~/.vim/autoload
 wget -O ~/.vim/autoload/flake8.vim https://raw.githubusercontent.com/nvie/vim-flake8/master/autoload/flake8.vim
 
+# Vim Rainbow Parentheses Improved
+wget -O ~/.vim/plugin/rainbow_main.vim https://raw.githubusercontent.com/luochen1990/rainbow/master/plugin/rainbow_main.vim
+wget -O ~/.vim/autoload/rainbow.vim https://raw.githubusercontent.com/luochen1990/rainbow/master/autoload/rainbow.vim
+wget -O ~/.vim/autoload/rainbow_main.vim https://raw.githubusercontent.com/luochen1990/rainbow/master/autoload/rainbow_main.vim
+
 # Vim Scala syntax highlighting
 mkdir -p ~/.vim/{ftdetect,indent,syntax} && for d in ftdetect indent syntax ; do wget --no-check-certificate -O ~/.vim/$d/scala.vim https://raw.githubusercontent.com/derekwyatt/vim-scala/master/$d/scala.vim; done
 

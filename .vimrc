@@ -23,12 +23,16 @@ inoremap ( ()<left>
 inoremap { {}<left>
 inoremap " ""<left>
 inoremap ' ''<left>
+
 "" indent guide
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
 let g:indent_guides_auto_colors=1
 let g:indent_guides_color_change_percent = 30
 let g:indent_guides_guide_size = 1
+
+"Rainbow Parentheses Improved
+let g:rainbow_active=1
 
 set list
 set listchars=tab:^\ ,trail:~
