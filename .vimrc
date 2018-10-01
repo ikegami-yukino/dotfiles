@@ -11,7 +11,7 @@ set tabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
-set clipboard=unnamedplus
+set clipboard=unnamedplus,autoselect
 
 colorscheme peachpuff
 
