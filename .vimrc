@@ -17,12 +17,6 @@ colorscheme peachpuff
 
 " 対応括弧に'<'と'>'のペアを追加
 set matchpairs& matchpairs+=<:>
-" [ と打ったら [] って入力されてしかも括弧の中にいる(以下同様)
-inoremap [ []<left>
-inoremap ( ()<left>
-inoremap { {}<left>
-inoremap " ""<left>
-inoremap ' ''<left>
 
 "" indent guide
 let g:indent_guides_enable_on_vim_startup=1
