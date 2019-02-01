@@ -96,9 +96,9 @@ if [ "$(uname)" == 'Darwin' ]; then
   homebrewcask qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql
 
   echo 'Install GUI apps'
-  homebrewcask macvim totalspaces flux
+  homebrewcask macvim totalspaces
   homebrewcask google-chrome
-  homebrewcask dropbox iterm2 appcleaner
+  homebrewcask dropbox appcleaner
 
   ###############
   # OSX settings
