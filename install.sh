@@ -51,6 +51,12 @@ if [ ! -d /work ]; then
     sudo chmod 777 /work
 fi
 
+if [ "$(uname)" == 'Darwin' ]; then
+    if xcode-select --install 1> /dev/null ; then
+    :
+    fi
+fi
+
 ###############
 # Git
 ###############
@@ -73,10 +79,6 @@ git config --global core.excludesfile $HOME/.gitignore_global
 ###############
 if [ "$(uname)" == 'Darwin' ]; then
   echo 'source .profile' > ~/.bashrc
-
-  if xcode-select --install 1> /dev/null ; then
-    :
-  fi
 
   if type brew 1> /dev/null 2> /dev/null ; then
     :
