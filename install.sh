@@ -7,7 +7,7 @@ make_link() {
   do
     if [ ! -e ~/${x} ]; then
       echo "Create ${x}"
-      ln -s ~/dotfiles/${x} ~/
+      ln -sf ~/dotfiles/${x} ~/
     fi
   done
 }
