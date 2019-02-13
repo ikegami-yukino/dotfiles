@@ -95,7 +95,12 @@ if [ "$(uname)" == 'Darwin' ]; then
   homebrewcask java
 
   echo 'Install QuickLook plugins'
-  homebrewcask qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql
+  homebrewcask qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql
+  curl -LO https://github.com/BrianGilbert/QLColorCode-extra/archive/master.zip
+  unzip master.zip
+  cp QLColorCode-extra-master/QLColorCode.qlgenerator ${HOME}/Library/QuickLook/
+  rm master.zip
+  rm -r QLColorCode-extra-master
 
   echo 'Install GUI apps'
   homebrewcask macvim
