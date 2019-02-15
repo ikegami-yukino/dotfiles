@@ -78,8 +78,6 @@ git config --global core.excludesfile $HOME/.gitignore_global
 # OSX
 ###############
 if [ "$(uname)" == 'Darwin' ]; then
-  echo 'source .profile' > ~/.bashrc
-
   if type brew 1> /dev/null 2> /dev/null ; then
     :
   else
