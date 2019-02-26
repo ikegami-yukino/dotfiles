@@ -85,7 +85,7 @@ if [ "$(uname)" == 'Darwin' ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  homebrew git tig nkf wget coreutils gnu-sed python3 ag mas
+  homebrew git tig nkf wget coreutils gnu-sed python3 ag mas bash-completion
   ln -sf /usr/local/Cellar/git/*/share/git-core/contrib/diff-highlight /usr/local/bin
 
   echo 'Install Java'

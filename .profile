@@ -10,6 +10,9 @@ export HISTCONTROL=ignoreboth
 # bash history
 export HISTSIZE=9999
 
+# bash completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 # aliases
 alias l='ls -lah -G'
 alias ls='ls -G'
