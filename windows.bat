@@ -2,30 +2,34 @@
 
 SET USER=etern
 
-curl -L https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/.vimrc > C:\Users\%USER%\.vimrc
-md C:\Users\%USER%\.vim
-md C:\Users\%USER%\.vim\tmp
-md C:\Users\%USER%\.vim\backup
-md C:\Users\%USER%\.vim\undo
+curl -L https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/.flake8 > C:\Users\%USER%\.flake8
+
+curl -L https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/_vimrc > C:\Users\%USER%\_vimrc
+curl -L https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/_gvimrc > C:\Users\%USER%\_gvimrc
+md C:\Users\%USER%\vimfiles
 
 echo Vim Python syntax checker
-md C:\Users\%USER%\.vim\plugin
-curl -L  https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim > C:\Users\%USER%\.vim\plugin\python_flake8.vim 
-curl -L  https://raw.githubusercontent.com/tell-k/vim-autopep8/master/ftplugin/python_autopep8.vim > C:\Users\%USER%\.vim\plugin\python_autopep8.vim
+md C:\Users\%USER%\vimfiles\ftplugin
+curl -L https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim > C:\Users\%USER%\vimfiles\ftplugin\python_flake8.vim
+curl -L https://raw.githubusercontent.com/tell-k/vim-autopep8/master/ftplugin/python_autopep8.vim > C:\Users\%USER%\vimfiles\ftplugin\python_autopep8.vim
 md C:\Users\%USER%\.vim\autoload
-curl -L  https://raw.githubusercontent.com/nvie/vim-flake8/master/autoload/flake8.vim > C:\Users\%USER%\.vim\autoload\flake8.vim 
+curl -L https://raw.githubusercontent.com/nvie/vim-flake8/master/autoload/flake8.vim > C:\Users\%USER%\vimfiles\autoload\flake8.vim
 
 echo Download ChocolatePapaya color for Vim
 md C:\Users\%USER%\.vim\colors
-curl -L  https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim > C:\Users\%USER%\.vim\colors\ChocolatePapaya.vim
+curl -L https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim > C:\Users\%USER%\vimfiles\colors\ChocolatePapaya.vim
 
 echo Vim Scala syntax highlighting
 for %%d in (ftdetect indent syntax) ; do (
-  md C:\Users\%USER%\.vim\%%d
-  curl -L  https://raw.githubusercontent.com/derekwyatt/vim-scala/master/%%d/scala.vim > C:\Users\%USER%\.vim\%%d\scala.vim;
+  md C:\Users\%USER%\vimfiles\%%d
+  curl -L https://raw.githubusercontent.com/derekwyatt/vim-scala/master/%%d/scala.vim > C:\Users\%USER%\vimfiles\%%d\scala.vim;
 )
 
-echo Vim indent guide
-curl -L  https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/color_helper.vim > C:\Users\%USER%\.vim\autoload\color_helper.vim 
-curl -L  https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/indent_guides.vim > C:\Users\%USER%\.vim\autoload\indent_guides.vim 
-curl -L  https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/plugin/indent_guides.vim > C:\Users\%USER%\.vim\plugin\indent_guides.vim
+echo Vim isort
+curl -L https://raw.githubusercontent.com/fisadev/vim-isort/master/ftplugin/python_vimisort.vim > C:\Users\%USER%\vimfiles\ftplugin\python_vimisort.vim
+
+echo Vim Rainbow Parentheses Improved
+md C:\Users\%USER%\vimfiles\plugin
+curl -L https://raw.githubusercontent.com/luochen1990/rainbow/master/plugin/rainbow_main.vim > C:\Users\%USER%\vimfiles\plugin\rainbow_main.vim
+curl -L https://raw.githubusercontent.com/luochen1990/rainbow/master/autoload/rainbow.vim > C:\Users\%USER%\vimfiles\autoload\rainbow.vim
+curl -L https://raw.githubusercontent.com/luochen1990/rainbow/master/autoload/rainbow_main.vim > C:\Users\%USER%\vimfiles\autoload\rainbow_main.vim
