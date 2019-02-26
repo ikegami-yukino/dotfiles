@@ -34,9 +34,6 @@ alias gbr="git branch -r --no-merge"
 alias gitauthorreset="git commit --amend --reset-author"
 
 # Java
-if [ "$(uname)" == 'Darwin' ]; then
-  export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-fi
 alias java='java -Dfile.encoding=UTF-8'
 alias javac='javac -J-Dfile.encoding=UTF-8'
 
