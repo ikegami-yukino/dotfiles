@@ -38,10 +38,9 @@ autocmd Filetype javascript set shiftwidth=4
 
 syntax on
 filetype plugin indent on
-autocmd FileType python map <buffer> <F8> :Isort <CR>
-autocmd FileType python map <buffer> <F9> :call Yapf() <CR>
-autocmd FileType python map <buffer> <F10> :call Autopep8() <CR>
-autocmd FileType python map <buffer> <F11> :call Flake8() <CR>
+autocmd FileType python map <buffer> <F10> :Isort <CR>
+autocmd FileType python map <buffer> <F11> :call Autopep8() <CR>
+autocmd FileType python map <buffer> <F12> :call Flake8() <CR>
 au BufNewFile,BufRead *.hql set filetype=hive expandtab
 au BufNewFile,BufRead *.q set filetype=hive expandtab
 au BufNewFile,BufRead *.gyp set filetype=python expandtab

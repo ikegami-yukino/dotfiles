@@ -205,11 +205,6 @@ wget -O ~/.vim/autoload/color_helper.vim https://raw.githubusercontent.com/natha
 wget -O ~/.vim/autoload/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/indent_guides.vim
 wget -O ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/plugin/indent_guides.vim
 
-# vim-yapf
-sudo python -m pip install yapf
-make_dir ~/.vim/ftplugin
-wget -O ~/.vim/ftplugin/python_yapf.vim https://raw.githubusercontent.com/mindriot101/vim-yapf/master/ftplugin/python_yapf.vim
-
 # vim-isort
 sudo python -m pip install isort
 wget -O ~/.vim/ftplugin/python_vimisort.vim https://raw.githubusercontent.com/fisadev/vim-isort/master/ftplugin/python_vimisort.vim
