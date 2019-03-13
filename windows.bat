@@ -12,6 +12,7 @@ echo Vim Python syntax checker
 md C:\Users\%USER%\vimfiles\ftplugin
 curl -L https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim > C:\Users\%USER%\vimfiles\ftplugin\python_flake8.vim
 curl -L https://raw.githubusercontent.com/tell-k/vim-autopep8/master/ftplugin/python_autopep8.vim > C:\Users\%USER%\vimfiles\ftplugin\python_autopep8.vim
+curl -L https://raw.githubusercontent.com/tell-k/vim-autoflake/master/ftplugin/python_autoflake.vim > C:\Users\%USER%\vimfiles\ftplugin\python_autoflake.vim
 md C:\Users\%USER%\.vim\autoload
 curl -L https://raw.githubusercontent.com/nvie/vim-flake8/master/autoload/flake8.vim > C:\Users\%USER%\vimfiles\autoload\flake8.vim
 

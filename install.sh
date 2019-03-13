@@ -184,10 +184,11 @@ make_dir ~/.vim/colors
 wget -O ~/.vim/colors/ChocolatePapaya.vim https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim
 
 # Vim Python syntax checker
-sudo python -m pip install flake8 autopep8
+sudo python -m pip install flake8 autopep8 autoflake
 make_dir ~/.vim/plugin
 wget -O ~/.vim/plugin/python_flake8.vim https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim
 wget -O ~/.vim/plugin/python_autopep8.vim https://raw.githubusercontent.com/tell-k/vim-autopep8/master/ftplugin/python_autopep8.vim
+wget -O ~/.vim/ftplugin/python_autoflake.vim https://raw.githubusercontent.com/tell-k/vim-autoflake/master/ftplugin/python_autoflake.vim
 
 make_dir ~/.vim/autoload
 wget -O ~/.vim/autoload/flake8.vim https://raw.githubusercontent.com/nvie/vim-flake8/master/autoload/flake8.vim
