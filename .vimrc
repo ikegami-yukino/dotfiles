@@ -38,6 +38,9 @@ autocmd Filetype javascript set shiftwidth=4
 
 syntax on
 filetype plugin indent on
+let g:autoflake_remove_all_unused_imports=1
+let g:autoflake_remove_unused_variables=1
+autocmd FileType python map <buffer> <F9> :call Autoflake()<CR>
 autocmd FileType python map <buffer> <F10> :Isort <CR>
 autocmd FileType python map <buffer> <F11> :call Autopep8() <CR>
 autocmd FileType python map <buffer> <F12> :call Flake8() <CR>
