@@ -15,6 +15,13 @@ set clipboard=unnamedplus,autoselect
 set laststatus=2
 set statusline=%-(%f%m%h%q%r%w%)%=%{&ff}\|%{&fenc}\ %y%l,%c\ %0P
 
+if has('unix')
+  vmap <C-c> "+yi
+  vmap <C-x> "+c
+  vmap <C-v> c<ESC>"+p
+  imap <C-v> <C-r><C-o>+
+endif
+
 colorscheme peachpuff
 
 " 対応括弧に'<'と'>'のペアを追加
