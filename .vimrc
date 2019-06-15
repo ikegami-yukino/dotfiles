@@ -19,6 +19,8 @@ if has('unix')
   vmap <C-c> "+yi
   vmap <C-x> "+c
   vmap <C-v> c<ESC>"+p
+  nmap <c-s> :w<CR>
+  imap <c-s> <Esc>:w<CR>a
   imap <C-v> <C-r><C-o>+
 endif
 
