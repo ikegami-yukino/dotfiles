@@ -5,9 +5,12 @@
 
 history.sqlite
 
-*id_rsa
-*id_rsa.pub
+.matplotlib/fontList*
+
+authorized_key*
+*id_rsa*
+*id_dsa*
 known_hosts
 
 .vim/undo/*
-.vim/tmp/.swn
+.vim/tmp/*
