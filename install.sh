@@ -214,8 +214,7 @@ wget -O ~/.vim/ftplugin/python_vimisort.vim https://raw.githubusercontent.com/fi
 # Jupyter magic
 ###############
 sudo python -m pip install jupyter
-jupyter nbextension install https://github.com/kenkoooo/jupyter-autopep8/archive/master.zip --user
-jupyter nbextension enable jupyter-autopep8-master/jupyter-autopep8
-
-jupyter nbextension install https://github.com/benjaminabel/jupyter-isort/archive/master.zip --user
-jupyter nbextension enable jupyter-isort-master/jupyter-isort
+python -m pip install jupyter_contrib_nbextensions --user
+jupyter contrib nbextension install --user
+jupyter nbextension enable code_prettify/autopep8
+jupyter nbextension enable code_prettify/isort
