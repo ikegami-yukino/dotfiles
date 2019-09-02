@@ -184,7 +184,7 @@ make_dir ~/.vim/colors
 wget -O ~/.vim/colors/ChocolatePapaya.vim https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim
 
 # Vim Python syntax checker
-sudo python -m pip install flake8 autopep8 autoflake
+python -m pip install flake8 autopep8 autoflake --user
 make_dir ~/.vim/plugin
 wget -O ~/.vim/plugin/python_flake8.vim https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim
 wget -O ~/.vim/plugin/python_autopep8.vim https://raw.githubusercontent.com/tell-k/vim-autopep8/master/ftplugin/python_autopep8.vim
@@ -207,13 +207,13 @@ wget -O ~/.vim/autoload/indent_guides.vim https://raw.githubusercontent.com/nath
 wget -O ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/plugin/indent_guides.vim
 
 # vim-isort
-sudo python -m pip install isort
+python -m pip install isort --user
 wget -O ~/.vim/ftplugin/python_vimisort.vim https://raw.githubusercontent.com/fisadev/vim-isort/master/ftplugin/python_vimisort.vim
 
 ###############
 # Jupyter magic
 ###############
-sudo python -m pip install jupyter
+python -m pip install jupyter --user
 python -m pip install jupyter_contrib_nbextensions --user
 jupyter contrib nbextension install --user
 jupyter nbextension enable code_prettify/autopep8
