@@ -4,8 +4,9 @@ SET USER=etern
 
 curl -L https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/.flake8 > C:\Users\%USER%\.flake8
 
-curl -L https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/_vimrc > C:\Users\%USER%\_vimrc
-curl -L https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/_gvimrc > C:\Users\%USER%\_gvimrc
+curl -L https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/windows/_vimrc > C:\Users\%USER%\_vimrc
+curl -L https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/windows/_gvimrc > C:\Users\%USER%\_gvimrc
+curl -L https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/windows/macros.txt > C:\Users\%USER%\macros.txt
 md C:\Users\%USER%\vimfiles
 
 echo Vim Python syntax checker
