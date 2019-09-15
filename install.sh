@@ -131,10 +131,10 @@ if [ "$(uname)" == 'Darwin' ]; then
 elif type apt 1> /dev/null 2> /dev/null ; then
 
   # Install building tool
-  sudo apt install -y build-essential python3.6-dev python-pip virtualenv python3-pip
+  sudo apt install -y build-essential python3.7-dev
 
   # Install Developper tool
-  sudo apt install vim-gnome byobu tig openssh-server
+  sudo apt install byobu tig openssh-server
 
   # Install scipy dependencies
   sudo apt install -y gfortran liblapack-dev libblas-dev
@@ -150,6 +150,9 @@ elif type apt 1> /dev/null 2> /dev/null ; then
   sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
 
   if type xdg-user-dirs-gtk-update 1> /dev/null 2> /dev/null ; then
+    # Install Developper tool
+    sudo apt install vim-gnome
+
     # Rename directories
     LANG=C xdg-user-dirs-gtk-update
 
