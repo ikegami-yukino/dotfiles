@@ -24,6 +24,7 @@ fi
 
 # Python
 export PYTHONDONTWRITEBYTECODE=1
+export PATH=${HOME}/.local/bin/:${PATH}
 
 # Git
 alias b="git branch"
