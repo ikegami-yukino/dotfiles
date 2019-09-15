@@ -149,23 +149,25 @@ elif type apt 1> /dev/null 2> /dev/null ; then
   # Set Japan timezone
   sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
 
-  # Rename directories
-  LANG=C xdg-user-dirs-gtk-update
+  if type xdg-user-dirs-gtk-update 1> /dev/null 2> /dev/null ; then
+    # Rename directories
+    LANG=C xdg-user-dirs-gtk-update
 
-  # Diasble guest session
-  sudo sh -c 'printf "[SeatDefaults]\nallow-guest=false\n" >/usr/share/lightdm/lightdm.conf.d/50-no-guest.conf'
+    # Diasble guest session
+    sudo sh -c 'printf "[SeatDefaults]\nallow-guest=false\n" >/usr/share/lightdm/lightdm.conf.d/50-no-guest.conf'
 
-  # Prevents Windows's clock from shifting
-  sudo timedatectl set-local-rtc true
+    # Prevents Windows's clock from shifting
+    sudo timedatectl set-local-rtc true
+
+    # Change nautilus's address bar to text style
+    gsettings set org.gnome.nautilus.preferences always-use-location-entry true
+
+    # mount exFAT
+    sudo apt-get install exfat-fuse exfat-utils
+  fi
 
   # Change setting clock server
   sudo sed -i 's/#NTP=/NTP=ntp.nict.jp/g' /etc/systemd/timesyncd.conf
-
-  # Change nautilus's address bar to text style
-  gsettings set org.gnome.nautilus.preferences always-use-location-entry true
-
-  # mount exFAT
-  sudo apt-get install exfat-fuse exfat-utils
 
   # git
   sudo install -m 0755 /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/local/bin/
