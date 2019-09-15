@@ -14,11 +14,11 @@ md C:\Users\%USER%\vimfiles\ftplugin
 curl -L https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim > C:\Users\%USER%\vimfiles\ftplugin\python_flake8.vim
 curl -L https://raw.githubusercontent.com/tell-k/vim-autopep8/master/ftplugin/python_autopep8.vim > C:\Users\%USER%\vimfiles\ftplugin\python_autopep8.vim
 curl -L https://raw.githubusercontent.com/tell-k/vim-autoflake/master/ftplugin/python_autoflake.vim > C:\Users\%USER%\vimfiles\ftplugin\python_autoflake.vim
-md C:\Users\%USER%\.vim\autoload
+md C:\Users\%USER%\vimfiles\autoload
 curl -L https://raw.githubusercontent.com/nvie/vim-flake8/master/autoload/flake8.vim > C:\Users\%USER%\vimfiles\autoload\flake8.vim
 
 echo Download ChocolatePapaya color for Vim
-md C:\Users\%USER%\.vim\colors
+md C:\Users\%USER%\vimfiles\colors
 curl -L https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim > C:\Users\%USER%\vimfiles\colors\ChocolatePapaya.vim
 
 echo Vim Scala syntax highlighting
