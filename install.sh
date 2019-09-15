@@ -131,7 +131,7 @@ if [ "$(uname)" == 'Darwin' ]; then
 elif type apt 1> /dev/null 2> /dev/null ; then
 
   # Install building tool
-  sudo apt install -y build-essential python3.7-dev
+  sudo apt install -y build-essential python3.7-dev python3-pip
 
   # Install Developper tool
   sudo apt install byobu tig openssh-server
@@ -189,8 +189,9 @@ make_dir ~/.vim/colors
 wget -O ~/.vim/colors/ChocolatePapaya.vim https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim
 
 # Vim Python syntax checker
-python -m pip install flake8 autopep8 autoflake --user
+python3.7 -m pip install flake8 autopep8 autoflake --user
 make_dir ~/.vim/plugin
+make_dir ~/.vim/ftplugin
 wget -O ~/.vim/plugin/python_flake8.vim https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim
 wget -O ~/.vim/plugin/python_autopep8.vim https://raw.githubusercontent.com/tell-k/vim-autopep8/master/ftplugin/python_autopep8.vim
 wget -O ~/.vim/ftplugin/python_autoflake.vim https://raw.githubusercontent.com/tell-k/vim-autoflake/master/ftplugin/python_autoflake.vim
@@ -212,14 +213,15 @@ wget -O ~/.vim/autoload/indent_guides.vim https://raw.githubusercontent.com/nath
 wget -O ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/plugin/indent_guides.vim
 
 # vim-isort
-python -m pip install isort --user
+python3.7 -m pip install isort --user
 wget -O ~/.vim/ftplugin/python_vimisort.vim https://raw.githubusercontent.com/fisadev/vim-isort/master/ftplugin/python_vimisort.vim
 
 ###############
 # Jupyter magic
 ###############
-python -m pip install jupyter --user
-python -m pip install jupyter_contrib_nbextensions --user
+python3.7 -m pip install jupyter
+python3.7 -m pip install jupyter_contrib_nbextensions
+export PATH=${HOME}/.local/bin/:${PATH}
 jupyter contrib nbextension install --user
 jupyter nbextension enable code_prettify/autopep8
 jupyter nbextension enable code_prettify/isort
