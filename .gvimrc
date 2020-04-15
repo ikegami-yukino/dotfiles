@@ -5,3 +5,7 @@ if has('mac')
 elseif has('unix')
   set guifont=Cica\ 15
 endif
+
+if has('kaoriya')
+  set noimdisableactivate
+endif
