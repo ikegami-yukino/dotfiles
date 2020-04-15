@@ -19,7 +19,7 @@ alias ls='ls -G'
 alias ll='ls -alh -G'
 alias keys="ssh-add -l"
 if [ "$(uname)" == 'Darwin' ]; then
-  alias gvim='open /Applications/MacVim.app'
+  alias mvim="/Applications/MacVim.app/Contents/bin/mvim --remote-tab-silent"
 fi
 
 # Python
