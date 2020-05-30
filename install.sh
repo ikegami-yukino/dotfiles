@@ -45,10 +45,9 @@ if [ ! -d ~/${1} ]; then
 fi
 }
 
-if [ ! -d /work ]; then
-    echo "mkdir: /work"
-    sudo mkdir /work
-    sudo chmod 777 /work
+if [ ! -d &{HOME}/work ]; then
+    echo "mkdir: &{HOME}/work"
+    sudo mkdir &{HOME}/work
 fi
 
 if [ "$(uname)" == 'Darwin' ]; then
