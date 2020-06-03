@@ -12,32 +12,6 @@ make_link() {
   done
 }
 
-homebrew() {
-  items=${@}
-  for x in ${items[@]}
-  do
-    if type ${x} 1> /dev/null 2> /dev/null ; then
-      if brew upgrade ${x} ; then
-        :
-      fi
-    else
-      echo "install ${x}"
-      brew install ${x}
-    fi
-  done
-}
-
-homebrewcask() {
-  items=${@}
-  for x in ${items[@]}
-  do
-    if [ ! -e /Applications/${x} ] ; then
-      echo "install ${x}"
-      brew cask install ${x}
-    fi
-  done
-}
-
 make_dir() {
 if [ ! -d ~/${1} ]; then
     echo "mkdir: ${1}"
@@ -45,9 +19,9 @@ if [ ! -d ~/${1} ]; then
 fi
 }
 
-if [ ! -d &{HOME}/work ]; then
-    echo "mkdir: &{HOME}/work"
-    sudo mkdir &{HOME}/work
+if [ ! -d ${HOME}/work ]; then
+    echo "mkdir: ${HOME}/work"
+    mkdir ${HOME}/work
 fi
 
 if [ "$(uname)" == 'Darwin' ]; then
@@ -67,11 +41,11 @@ if [ ! -d ~/dotfiles ]; then
   git clone https://github.com/ikegami-yukino/dotfiles.git ~/dotfiles
 fi
 
-make_link {.bashrc,.gitconfig,.gitignore_global,.gvimrc,.ipython,.jupyter,.matplotlib,.profile,.ssh,.vim,.vimrc,.keras}
+make_link {.bashrc,.gitconfig,.gitignore_global,.gvimrc,.ipython,.jupyter,.matplotlib,.profile,.ssh,.vim,.vimrc,.keras,.zshenv,.zsh}
 
 git config --global user.name "Yukino Ikegami"
 git config --global user.email yknikgm@gmail.com
-git config --global core.excludesfile $HOME/.gitignore_global
+git config --global core.excludesfile ${HOME}/.gitignore_global
 
 ###############
 # OSX
@@ -84,53 +58,56 @@ if [ "$(uname)" == 'Darwin' ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  homebrew git tig nkf wget coreutils gnu-sed python3 ag mas bash-completion
+  echo 'Install apps by Homebrew'
+  brew bundle
+
+  echo 'Link diff-highlight'
   ln -sf /usr/local/Cellar/git/*/share/git-core/contrib/diff-highlight /usr/local/bin
-
-  echo 'Install Java'
-  brew tap caskroom/versions
-  homebrewcask java
-
-  echo 'Install QuickLook plugins'
-  homebrewcask qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql
-  curl -LO https://github.com/BrianGilbert/QLColorCode-extra/archive/master.zip
-  unzip master.zip
-  cp QLColorCode-extra-master/QLColorCode.qlgenerator ${HOME}/Library/QuickLook/
-  rm master.zip
-  rm -r QLColorCode-extra-master
-
-  echo 'Install GUI apps'
-  homebrewcask macvim
-  homebrewcask totalspaces
-  homebrewcask google-chrome
-  homebrewcask dropbox
-  homebrewcask appcleaner
-  homebrewcask docker
 
   ###############
   # OSX settings
   ###############
   # ネットワークボリュームに.DS_Storeを作らない
-  defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+  defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
   # USBドライブに.DS_Shareを作らない
   defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
   # 隠しファイルの表示
   defaults write com.apple.finder AppleShowAllFiles -bool true
-  # ライブラリフォルダの表示
+  # 拡張子変更時に警告しない
+  defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+  # 未確認アプリケーション実行時のダイアログを無効
+  defaults write com.apple.LaunchServices LSQuarantine -bool false
+  # ライブラリディレクトリを表示
   chflags nohidden ~/Library
+  # /Volumes ディレクトリを表示
+  chflags nohidden /Volumes
   # Finderのタイトルバーにフルパスを表示
   defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
   # Quick Lookでテキストを選択可能に
   defaults write com.apple.finder QLEnableTextSelection -bool true
-  # 撮影した画像から影のエフェクトを無くす
+  # スクリーンショットの保存先を変更
+  defaults write com.apple.screencapture location ${HOME}/SS/;killall SystemUIServer
+  # スクリーンショットの画像から影のエフェクトを無くす
   defaults write com.apple.screencapture disable-shadow -bool true
-  # 撮影した画像のファイル名を変更する
+  # スクリーンショットのファイル名を変更する
   defaults write com.apple.screencapture name cap
+  # Enable "Tap to click"
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+  defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  # キーリピートの時間
+  defaults write NSGlobalDomain KeyRepeat -int 2
+  # キーリピート認識までの時間
+  defaults write NSGlobalDomain InitialKeyRepeat -int 15
+  # Dockを自動的に非表示にする
+  defaults write com.apple.dock autohide -bool true
+  # Dockの拡大機能ON
+  defaults write com.apple.dock magnification -bool true
 
 elif type apt 1> /dev/null 2> /dev/null ; then
 
   # Install building tool
-  sudo apt install -y build-essential python3.7-dev python3-pip
+  sudo apt install -y build-essential python3-dev python3-pip
 
   # Install Developper tool
   sudo apt install byobu tig openssh-server
@@ -188,7 +165,7 @@ make_dir ~/.vim/colors
 wget -O ~/.vim/colors/ChocolatePapaya.vim https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim
 
 # Vim Python syntax checker
-python3.7 -m pip install flake8 autopep8 autoflake --user
+python3 -m pip install flake8 autopep8 autoflake --user
 make_dir ~/.vim/plugin
 make_dir ~/.vim/ftplugin
 wget -O ~/.vim/plugin/python_flake8.vim https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim
@@ -212,14 +189,14 @@ wget -O ~/.vim/autoload/indent_guides.vim https://raw.githubusercontent.com/nath
 wget -O ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/plugin/indent_guides.vim
 
 # vim-isort
-python3.7 -m pip install isort --user
+python3 -m pip install isort --user
 wget -O ~/.vim/ftplugin/python_vimisort.vim https://raw.githubusercontent.com/fisadev/vim-isort/master/ftplugin/python_vimisort.vim
 
 ###############
 # Jupyter magic
 ###############
-python3.7 -m pip install jupyter
-python3.7 -m pip install jupyter_contrib_nbextensions
+python3 -m pip install jupyter
+python3 -m pip install jupyter_contrib_nbextensions
 export PATH=${HOME}/.local/bin/:${PATH}
 jupyter contrib nbextension install --user
 jupyter nbextension enable code_prettify/autopep8

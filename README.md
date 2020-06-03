@@ -17,3 +17,7 @@ choco install packages.config
 curl -LO https://raw.githubusercontent.com/ikegami-yukino/dotfiles/master/windows.bat
 windows.bat
 ```
+
+## Backup on macOS
+
+`brew bundle dump`
