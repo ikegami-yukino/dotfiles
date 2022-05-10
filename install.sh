@@ -61,9 +61,6 @@ if [ "$(uname)" == 'Darwin' ]; then
   echo 'Install apps by Homebrew'
   brew bundle
 
-  echo 'Link diff-highlight'
-  ln -sf /usr/local/Cellar/git/*/share/git-core/contrib/diff-highlight /usr/local/bin
-
   ###############
   # OSX settings
   ###############
@@ -78,9 +75,9 @@ if [ "$(uname)" == 'Darwin' ]; then
   # 未確認アプリケーション実行時のダイアログを無効
   defaults write com.apple.LaunchServices LSQuarantine -bool false
   # ライブラリディレクトリを表示
-  chflags nohidden ~/Library
+  sudo chflags nohidden ~/Library
   # /Volumes ディレクトリを表示
-  chflags nohidden /Volumes
+  sudo chflags nohidden /Volumes
   # Finderのタイトルバーにフルパスを表示
   defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
   # Quick Lookでテキストを選択可能に
@@ -162,42 +159,42 @@ make_dir ~/.vim/undo
 
 # Download ChocolatePapaya color for Vim
 make_dir ~/.vim/colors
-wget -O ~/.vim/colors/ChocolatePapaya.vim https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim
+curl -o ~/.vim/colors/ChocolatePapaya.vim https://raw.githubusercontent.com/PrideChung/Vim/master/.vim/colors/ChocolatePapaya.vim
 
 # Vim Python syntax checker
 python3 -m pip install flake8 autopep8 autoflake --user
 make_dir ~/.vim/plugin
 make_dir ~/.vim/ftplugin
-wget -O ~/.vim/plugin/python_flake8.vim https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim
-wget -O ~/.vim/plugin/python_autopep8.vim https://raw.githubusercontent.com/tell-k/vim-autopep8/master/ftplugin/python_autopep8.vim
-wget -O ~/.vim/ftplugin/python_autoflake.vim https://raw.githubusercontent.com/tell-k/vim-autoflake/master/ftplugin/python_autoflake.vim
+curl -o ~/.vim/plugin/python_flake8.vim https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim
+curl -o ~/.vim/plugin/python_autopep8.vim https://raw.githubusercontent.com/tell-k/vim-autopep8/master/ftplugin/python_autopep8.vim
+curl -o ~/.vim/ftplugin/python_autoflake.vim https://raw.githubusercontent.com/tell-k/vim-autoflake/master/ftplugin/python_autoflake.vim
 
 make_dir ~/.vim/autoload
-wget -O ~/.vim/autoload/flake8.vim https://raw.githubusercontent.com/nvie/vim-flake8/master/autoload/flake8.vim
+curl -o ~/.vim/autoload/flake8.vim https://raw.githubusercontent.com/nvie/vim-flake8/master/autoload/flake8.vim
 
 # Vim Rainbow Parentheses Improved
-wget -O ~/.vim/plugin/rainbow_main.vim https://raw.githubusercontent.com/luochen1990/rainbow/master/plugin/rainbow_main.vim
-wget -O ~/.vim/autoload/rainbow.vim https://raw.githubusercontent.com/luochen1990/rainbow/master/autoload/rainbow.vim
-wget -O ~/.vim/autoload/rainbow_main.vim https://raw.githubusercontent.com/luochen1990/rainbow/master/autoload/rainbow_main.vim
+curl -o ~/.vim/plugin/rainbow_main.vim https://raw.githubusercontent.com/luochen1990/rainbow/master/plugin/rainbow_main.vim
+curl -o ~/.vim/autoload/rainbow.vim https://raw.githubusercontent.com/luochen1990/rainbow/master/autoload/rainbow.vim
+curl -o ~/.vim/autoload/rainbow_main.vim https://raw.githubusercontent.com/luochen1990/rainbow/master/autoload/rainbow_main.vim
 
 # Vim Scala syntax highlighting
-mkdir -p ~/.vim/{ftdetect,indent,syntax} && for d in ftdetect indent syntax ; do wget --no-check-certificate -O ~/.vim/$d/scala.vim https://raw.githubusercontent.com/derekwyatt/vim-scala/master/$d/scala.vim; done
+mkdir -p ~/.vim/{ftdetect,indent,syntax} && for d in ftdetect indent syntax ; do curl  -o ~/.vim/$d/scala.vim https://raw.githubusercontent.com/derekwyatt/vim-scala/master/$d/scala.vim; done
 
 # Vim indent guide
-wget -O ~/.vim/autoload/color_helper.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/color_helper.vim
-wget -O ~/.vim/autoload/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/indent_guides.vim
-wget -O ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/plugin/indent_guides.vim
+curl -o ~/.vim/autoload/color_helper.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/color_helper.vim
+curl -o ~/.vim/autoload/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/autoload/indent_guides.vim
+curl -o ~/.vim/plugin/indent_guides.vim https://raw.githubusercontent.com/nathanaelkane/vim-indent-guides/master/plugin/indent_guides.vim
 
 # vim-isort
 python3 -m pip install isort --user
-wget -O ~/.vim/ftplugin/python_vimisort.vim https://raw.githubusercontent.com/fisadev/vim-isort/master/ftplugin/python_vimisort.vim
+curl -o ~/.vim/ftplugin/python_vimisort.vim https://raw.githubusercontent.com/fisadev/vim-isort/master/ftplugin/python_vimisort.vim
 
 ###############
 # Jupyter magic
 ###############
-python3 -m pip install jupyter
-python3 -m pip install jupyter_contrib_nbextensions
-export PATH=${HOME}/.local/bin/:${PATH}
+python3 -m pip install jupyter --user
+python3 -m pip install jupyter_contrib_nbextensions --user
+export PATH=${HOME}/Library/Python/3.9/bin:${PATH}
 jupyter contrib nbextension install --user
 jupyter nbextension enable code_prettify/autopep8
 jupyter nbextension enable code_prettify/isort
