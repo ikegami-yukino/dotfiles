@@ -1,4 +1,4 @@
-git clone --depth=1 https://github.com/taku910/mecab
+git clone --depth=1 https://github.com/ikegami-yukino/mecab
 cd mecab/mecab
 ./configure  --enable-utf8-only
 make
