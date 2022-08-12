@@ -59,7 +59,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   fi
 
   echo 'Install apps by Homebrew'
-  brew bundle
+  # brew bundle
 
   ###############
   # OSX settings
