@@ -38,10 +38,10 @@ if type apt-get 1> /dev/null 2> /dev/null ; then
   sudo apt-get install -y git
 fi
 if [ ! -d ~/dotfiles ]; then
-  git clone https://github.com/ikegami-yukino/dotfiles.git ~/dotfiles
+  git clone git@github.com:ikegami-yukino/dotfiles.git ~/dotfiles
 fi
 
-make_link {.bashrc,.gitconfig,.gitignore_global,.gvimrc,.ipython,.jupyter,.matplotlib,.profile,.ssh,.vim,.vimrc,.keras,.zshenv,.zsh}
+make_link {.bashrc,.gitconfig,.gitignore_global,.gvimrc,.ipython,.jupyter,.matplotlib,.profile,.ssh,.vim,.vimrc,.keras,.zshenv,.zsh,.tigrc}
 
 git config --global user.name "Yukino Ikegami"
 git config --global user.email yknikgm@gmail.com
@@ -58,7 +58,11 @@ if [ "$(uname)" == 'Darwin' ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
-  echo 'Install apps by Homebrew'
+  # Setting Git
+  brew install git tig
+  ln -s /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight /opt/homebrew/bin/
+
+  # echo 'Install apps by Homebrew'
   # brew bundle
 
   ###############
